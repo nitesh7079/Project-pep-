@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 500px;
+      width: 100%;
+    }
+
+    h1 {
+      color: #1e3c72;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .input-section {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    input {
+      flex: 1;
+      padding: 15px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #1e3c72;
+    }
+
+    button {
+      padding: 15px 25px;
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(30, 60, 114, 0.4);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      background: #f8f9fa;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s;
+    }
+
+    li:hover {
+      background: #e9ecef;
+      transform: translateX(5px);
+    }
+
+    .delete-btn {
+      background: #dc3545;
+      padding: 8px 15px;
+      font-size: 14px;
+    }
+
+    .delete-btn:hover {
+      background: #c82333;
+    }
+
+    .empty-state {
+      text-align: center;
+      color: #999;
+      padding: 40px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📝 My Todo List</h1>
+    
+    <div class="input-section">
+      <input type="text" placeholder="Enter the task" id="tasklist">
+      <button onclick="onClickFun()">Add Task</button>
+    </div>
+
+    <ul id="tasklist1"></ul>
+  </div>
+  
+  <script>
+    const tasklist = document.getElementById("tasklist");
+    const tasklist1 = document.getElementById("tasklist1");
+    
+    function onClickFun() {
+      const taskValue = tasklist.value.trim();
+      
+      if (taskValue === "") {
+        alert("Please enter a task!");
+        return;
+      }
+      
+      const li = document.createElement("li");
+      li.innerHTML = `
+        <span>${taskValue}</span>
+        <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
+      `;
+      
+      tasklist1.appendChild(li);
+      tasklist.value = "";
+    }
+    
+    function deleteTask(btn) {
+      btn.parentElement.remove();
+    }
+    
+    // Add task on Enter key
+    tasklist.addEventListener("keypress", function(e) {
+      if (e.key === "Enter") {
+        onClickFun();
+      }
+    });
+  </script>
+</body>
+</html>

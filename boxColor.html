@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Color Changer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #434343 0%, #000000 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .boxes-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .box {
+            border: 3px solid white;
+            height: 120px;
+            width: 120px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .box:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+        }
+
+        p {
+            color: white;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎨 Box Color Changer</h1>
+    <p>Click any box to change all colors!</p>
+    
+    <div class="boxes-container"> 
+        <div id="first" class="box"></div>
+        <div id="second" class="box"></div>
+        <div id="third" class="box"></div> 
+        <div id="fourth" class="box"></div>
+    </div>
+
+    <script>
+        const a = document.getElementById("first");
+        const b = document.getElementById("second");
+        const c = document.getElementById("third");
+        const d = document.getElementById("fourth");
+
+        function randomColor() {
+      return "rgb(" +
+        Math.floor(Math.random() * 256) + "," +
+        Math.floor(Math.random() * 256) + "," +
+        Math.floor(Math.random() * 256) + ")";
+    }
+
+    
+    function changeAllColors() {
+      a.style.backgroundColor = randomColor();
+      b.style.backgroundColor = randomColor();
+      c.style.backgroundColor = randomColor();
+      d.style.backgroundColor = randomColor();
+    }
+
+    a.addEventListener("click", changeAllColors);
+    b.addEventListener("click", changeAllColors);
+    c.addEventListener("click", changeAllColors);
+    d.addEventListener("click", changeAllColors);
+  </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        input, select {
+            padding: 6px;
+            margin-right: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 7px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            margin-top: 20px;
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+   <label>Date:</label> 
+   <input type="date" id="date">
+
+   <label>Task:</label>
+   <input type="text" id="task">
+
+   <label>Priority:</label> 
+   <select name="priority" id="priority">
+    <option value="High">High</option>
+    <option value="Low">Low</option>
+    <option value="Medium">Medium</option>
+   </select>
+
+   <button onclick="addTask()">Add</button>
+
+  <table border="1">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Task</th>
+            <th>Priority</th>
+        </tr>
+    </thead>
+    <tbody id="showData"></tbody>
+  </table>
+
+  <script>
+    function addTask(){
+        let date = document.getElementById("date").value;
+        let task = document.getElementById("task").value;
+        let priority = document.getElementById("priority").value;
+
+        if(date === "" || task === "" || priority === ""){
+            alert("Please fill all fields");
+            return;
+        }
+
+        let row = `
+        <tr>
+            <td>${date}</td>
+            <td>${task}</td>
+            <td>${priority}</td>
+        </tr>
+        `;
+
+        document.getElementById("showData").innerHTML += row;
+    }
+  </script>
+</body>
+</html>

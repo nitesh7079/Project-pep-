@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fc466b 0%, #3f5efb 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #fc466b;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            color: #666;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #fc466b;
+            box-shadow: 0 0 10px rgba(252, 70, 107, 0.2);
+        }
+
+        input[readonly] {
+            background: #f8f9fa;
+            cursor: not-allowed;
+        }
+
+        .result-section {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .result-section h3 {
+            color: #3f5efb;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔢 Power Calculator</h1>
+        
+        <div class="input-group">
+            <label for="number">Enter Number:</label>
+            <input type="number" id="number" placeholder="Enter Number">
+        </div>
+
+        <div class="result-section">
+            <h3>Results</h3>
+            
+            <div class="input-group">
+                <label for="Squre">Square (²):</label>
+                <input type="text" id="Squre" placeholder="Square" readonly>
+            </div>
+
+            <div class="input-group">
+                <label for="Cube">Cube (³):</label>
+                <input type="text" id="Cube" placeholder="Cube" readonly>
+            </div>
+
+            <div class="input-group">
+                <label for="FourthPower">Fourth Power (⁴):</label>
+                <input type="text" id="FourthPower" placeholder="Fourth Power" readonly>
+            </div>
+        </div>
+    </div>
+    <script>
+        const numberInput = document.getElementById("number");
+        const squreInput = document.getElementById("Squre");
+        const cubeInput = document.getElementById("Cube");
+        const fourthInput = document.getElementById("FourthPower");
+
+        numberInput.addEventListener("input", function(){
+            let n = Number(numberInput.value);
+
+            if(numberInput.value === ""){
+            squreInput.value ="";
+            cubeInput.value = "";
+            fourthInput.value = "";
+         } else{
+            squreInput.value = n*n;
+            cubeInput.value = n*n*n;
+            fourthInput.value = n*n*n*n;
+            }
+            
+        })
+
+    </script>
+</body>
+</html>

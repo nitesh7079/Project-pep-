@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search User</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 500px;
+      width: 100%;
+    }
+
+    h2 {
+      color: #0083b0;
+      margin-bottom: 30px;
+      text-align: center;
+      font-size: 28px;
+    }
+
+    .search-box {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    input {
+      flex: 1;
+      padding: 15px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #0083b0;
+    }
+
+    button {
+      padding: 15px 30px;
+      background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(0, 131, 176, 0.4);
+    }
+
+    #result {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 10px;
+      min-height: 100px;
+      color: #666;
+    }
+
+    #result p {
+      margin: 10px 0;
+      padding: 8px 0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    #result p:last-child {
+      border-bottom: none;
+    }
+
+    #result b {
+      color: #0083b0;
+      display: inline-block;
+      min-width: 80px;
+    }
+
+    .loading {
+      text-align: center;
+      color: #0083b0;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🔍 Search Person</h2>
+
+    <div class="search-box">
+      <input type="text" id="search" placeholder="Enter name">
+      <button onclick="searchUser()">Search</button>
+    </div>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function searchUser() {
+      let name = document.getElementById("search").value;
+      let resultDiv = document.getElementById("result");
+
+      resultDiv.innerText = "Searching...";
+
+      // using setTimeout
+      setTimeout(() => {
+        fetch("https://jsonplaceholder.typicode.com/users")
+          .then(response => response.json())
+          .then(data => {
+            let user = data.find(u => 
+              u.name.toLowerCase().includes(name.toLowerCase())
+            );
+
+            if (user) {
+              resultDiv.innerHTML = `
+                <p><b>Name:</b> ${user.name}</p>
+                <p><b>Email:</b> ${user.email}</p>
+                <p><b>Phone:</b> ${user.phone}</p>
+                <p><b>City:</b> ${user.address.city}</p>
+                <p><b>Company:</b> ${user.company.name}</p>
+              `;
+            } else {
+              resultDiv.innerText = "User not found";
+            }
+          });
+      }, 2000); // 2 second delay
+    }
+  </script>
+
+</body>
+</html>

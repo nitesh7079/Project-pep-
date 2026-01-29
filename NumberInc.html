@@ -1,0 +1,200 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+  <div>
+    <button id="button1" onclick="fun1()">Button1</button>
+    <span id="value1">0</span>
+  </div>
+  <div>
+    <button id="button2" onclick="fun2()">Button2</button>
+    <span id="value2">0</span>
+    </div>
+    <div>
+    <button id="button3" onclick="fun3()">Button3</button>
+    <span id="value3">0</span>
+  </div>
+</div>
+  <script>
+    let btn1 = document.getElementById("button1");
+    let btn2 = document.getElementById("button2");
+    let btn3 = document.getElementById("button3");
+    let val1 = document.getElementById("value1")
+    let val2 = document.getElementById("value2");
+    let val3 = document.getElementById("value3");
+
+    function updatevalue(){
+      document.getElementById("value1").innerHTML = count
+      document.getElementById("value2").innerHTML = count
+      document.getElementById("value3").innerHTML = count
+
+    }
+    let count =0;
+    function fun1(){
+      count++
+      updatevalue()
+    }
+    function fun2(){
+      count++
+      updatevalue()
+    }
+    function fun3(){
+      count++
+      updatevalue()
+    }
+
+    btn1.addEventListener("click", ()=>{
+      let count = 0;
+      count++;
+      val1.innerText = Number(val1.textContent)+counter
+    })
+    btn2.addEventListener("click", ()=>{
+      let count = 0;
+      count++;
+      val2.innerText = Number(val2.textContent)+counter
+    })
+    btn3.addEventListener("click", ()=>{
+      let count = 0;
+      count++;
+      val3.innerText = Number(val3.textContent)+counter
+    });
+
+  </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fa709a;
+            margin-bottom: 30px;
+        }
+
+        .counter-box {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+        }
+
+        .counter-box:hover {
+            background: #e9ecef;
+            transform: scale(1.02);
+        }
+
+        button {
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(250, 112, 154, 0.4);
+        }
+
+        span {
+            font-size: 32px;
+            font-weight: bold;
+            color: #fa709a;
+            min-width: 60px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🔢 Counter App</h1>
+        
+        <div class="counter-box">
+            <button id="btn1">Button 1</button>
+            <span id="value1">0</span>
+        </div>
+        
+        <div class="counter-box">
+            <button id="btn2">Button 2</button>
+            <span id="value2">0</span>
+        </div>
+        
+        <div class="counter-box">
+            <button id="btn3">Button 3</button>
+            <span id="value3">0</span>
+        </div>
+    </div>
+
+    <script>
+        let btn1 = document.getElementById("btn1")
+        let btn2 = document.getElementById("btn2")
+        let btn3 = document.getElementById("btn3")
+        let val1 = document.getElementById("value1")
+        let val2 = document.getElementById("value2")
+        let val3 = document.getElementById("value3")
+
+        btn1.addEventListener("click", ()=>{
+            let counter = 0;
+            counter++;
+            val1.innerText = Number(val1.textContent) + counter
+        })
+         btn2.addEventListener("click", ()=>{
+            let counter = 0;
+            counter++;
+            val2.innerText = Number(val2.textContent) + counter
+        })
+        
+         btn3.addEventListener("click", ()=>{
+            let counter = 0;
+            counter++;
+            val3.innerText = Number(val3.textContent) + counter
+        })
+
+    </script>
+    
+</body>
+</html>

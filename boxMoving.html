@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Moving Animation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #8e2de2 0%, #4a00e0 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        p {
+            color: white;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .boxes-container {
+            display: flex;
+            gap: 20px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .box {
+            border: 3px solid white;
+            height: 120px;
+            width: 120px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <h1>📦 Box Moving Animation</h1>
+    <p>Click any box to see the color change and animation!</p>
+    
+    <div class="boxes-container"> 
+        <div id="first" class="box"></div>
+        <div id="second" class="box"></div>
+        <div id="third" class="box"></div> 
+        <div id="fourth" class="box"></div>
+    </div>
+
+    <script>
+        let a = document.getElementById("first");
+        const b = document.getElementById("second");
+        const c = document.getElementById("third");
+        const d = document.getElementById("fourth");
+
+        function randomColor() {
+      return "rgb(" +
+        Math.floor(Math.random() * 256) + "," +
+        Math.floor(Math.random() * 256) + "," +
+        Math.floor(Math.random() * 256) + ")";
+    }
+
+    
+    function changeAllColors() {
+      a.style.display='flex'
+      a.style.backgroundColor = randomColor();
+      
+      b.style.backgroundColor = randomColor();
+      c.style.backgroundColor = randomColor();
+      d.style.backgroundColor = randomColor();
+    }
+
+    a.addEventListener("click", ()=>{
+      changeAllColors()
+      a.style.position = "relative";
+      b.style.position = "absolute"
+      d.style.position = "relative"
+      d.style.top = "130px";
+      d.style.left = "-110px"
+
+      a.style.top = "130px"
+    });
+    b.addEventListener("click", ()=>{
+      changeAllColors()
+      b.style.position = "relative";
+       c.style.position = "absolute"
+
+      b.style.top = "130px"
+    });
+    c.addEventListener("click",  ()=>{
+      changeAllColors()
+      c.style.position = "relative";
+            d.style.position = "absolute"
+
+      c.style.top = "130px"
+    });
+    d.addEventListener("click", ()=>{
+      changeAllColors()
+      d.style.position = "relative";
+      d.style.top = "130px"
+    });
+
+
+  </script>
+</body>
+</html>
