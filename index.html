@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nitesh Raj | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
+
+    /* NAVBAR */
+    nav {
+      background: black;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+    }
+
+    .logo {
+      font-size: 22px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    nav ul li a:hover {
+      color: orange;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    /* ABOUT */
+    #about {
+       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    #about h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    #about p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 20px;
+      line-height: 1.8;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* SKILLS */
+    #skills {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    #skills h2 {
+      font-size: 42px;
+      margin-bottom: 40px;
+    }
+
+    #home {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #home::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: moveBackground 20s linear infinite;
+    }
+
+    @keyframes moveBackground {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(50px, 50px); }
+    }
+
+    .home-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+      max-width: 1200px;
+      z-index: 1;
+      flex-wrap: wrap;
+      padding: 40px;
+    }
+
+    .profile-photo {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+      padding: 8px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid white;
+    }
+
+    .profile-photo-placeholder {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 120px;
+      color: white;
+      font-weight: bold;
+      border: 5px solid white;
+    }
+
+    .home-text {
+      text-align: left;
+      max-width: 600px;
+    }
+
+    .home-text h1 {
+      font-size: 56px;
+      margin: 0 0 20px 0;
+      animation: fadeInUp 1s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .home-text .typing {
+      font-size: 32px;
+      color: #ffd93d;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    .home-text p {
+      font-size: 20px;
+      line-height: 1.8;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+
+    #home span {
+      color: #ffd93d;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .home-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .home-buttons button {
+      padding: 15px 35px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 50px;
+      transition: all 0.3s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ffd93d 0%, #ff6b6b 100%);
+      box-shadow: 0 5px 20px rgba(255, 107, 107, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(255, 107, 107, 0.6);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 3px solid white;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: white;
+      color: #667eea;
+      transform: translateY(-3px);
+    }
+
+    button {
+      padding: 10px 20px;
+      cursor: pointer;
+      border: none;
+      background: orange;
+      color: black;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: darkorange;
+    }
+
+    /* SKILLS */
+    .skills-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .skill-box {
+      background: rgba(255, 255, 255, 0.95);
+      color: #333;
+      padding: 20px 35px;
+      border-radius: 15px;
+      font-weight: bold;
+      font-size: 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .skill-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+      background: white;
+    }
+
+    /* PROJECTS */
+    #projects {
+      background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    }
+
+    #projects h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    #projects p {
+      font-size: 24px;
+      margin-bottom: 25px;
+      font-weight: 500;
+      color: #555;
+    }
+
+    .project-list {
+      max-width: 400px;
+      margin: auto;
+      text-align: left;
+    }
+
+    .project-list {
+      max-width: 400px;
+      margin: auto;
+      text-align: left;
+    }
+
+    .project-list li {
+      background: white;
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    #projectDropdown {
+      padding: 15px 20px;
+      font-size: 20px;
+      border: 3px solid orange;
+      border-radius: 10px;
+      background: white;
+      cursor: pointer;
+      min-width: 350px;
+      font-weight: 600;
+    }
+
+    #projectDropdown:hover {
+      border-color: darkorange;
+      box-shadow: 0 4px 12px rgba(255, 140, 0, 0.3);
+    }
+
+    #projectViewer {
+      margin-top: 30px;
+    }
+
+    #projectMsg {
+      font-size: 20px;
+      color: #666;
+    }
+
+    /* CONTACT */
+    #contact {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    #contact h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .contact-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .contact-info {
+      flex: 1;
+      min-width: 300px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      text-align: left;
+    }
+
+    .contact-info h3 {
+      font-size: 28px;
+      margin-bottom: 25px;
+      color: #ffd93d;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin: 20px 0;
+      font-size: 18px;
+    }
+
+    .contact-item i {
+      font-size: 24px;
+      color: #ffd93d;
+      min-width: 30px;
+    }
+
+    .contact-item a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .contact-item a:hover {
+      color: #ffd93d;
+    }
+
+    .contact-form {
+      flex: 1;
+      min-width: 300px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+    }
+
+    .contact-form h3 {
+      font-size: 28px;
+      margin-bottom: 25px;
+      color: #ffd93d;
+      text-align: left;
+    }
+
+    .contact-form input {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 15px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.9);
+      font-size: 16px;
+    }
+
+    .contact-form input:focus {
+      outline: none;
+      border-color: #ffd93d;
+    }
+
+    .contact-form button {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, #ffd93d 0%, #ff6b6b 100%);
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .contact-form button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 20px rgba(255, 107, 107, 0.4);
+    }
+
+    #msg {
+      margin-top: 15px;
+      font-size: 16px;
+      color: #ffd93d;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+
+    @media (max-width: 700px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: black;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+      }
+
+      nav ul li {
+        padding: 10px 0;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+
+      #home h1 {
+        font-size: 22px;
+      }
+
+      .home-content {
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .profile-photo {
+        width: 200px;
+        height: 200px;
+      }
+
+      .profile-photo-placeholder {
+        font-size: 80px;
+      }
+
+      .home-text {
+        text-align: center;
+      }
+
+      .home-text h1 {
+        font-size: 32px;
+      }
+
+      .home-text .typing {
+        font-size: 24px;
+      }
+
+      .home-text p {
+        font-size: 16px;
+      }
+
+      .home-buttons {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <h2 class="logo">Nitesh Raj</h2>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <ul id="menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HOME -->
+  <section id="home">
+    <div class="home-content">
+      <div class="profile-photo">
+        <img src="profile.jpg" alt="Nitesh Raj">
+      </div>
+      
+      <div class="home-text">
+        <h1>Hello, I'm <span>Nitesh Raj</span></h1>
+        <div class="typing">Full Stack Developer 💻</div>
+        <p>Building amazing web experiences with MERN Stack. Passionate about creating innovative solutions and learning new technologies.</p>
+        <div class="home-buttons">
+          <button class="btn-primary" onclick="showMessage()">Hire Me</button>
+          <button class="btn-secondary" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">View Projects</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+   <b> Currently pursuing B.Tech in Computer Science and Engineering. Passionate about web development and eager to learn new technologies. </b>
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>My Skills</h2>
+    <div class="skills-container">
+      <div class="skill-box">HTML</div>
+      <div class="skill-box">CSS</div>
+      <div class="skill-box">JavaScript</div>
+      <div class="skill-box">React (Learning)</div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>My Projects</h2>
+    <p>All projects completed in class - Select any project to view it below:</p>
+    
+    <select id="projectDropdown" onchange="loadProject()">
+      <option value="">-- Select a Project --</option>
+      <option value="banking system.html">Banking System</option>
+      <option value="Bmi.html">BMI Calculator</option>
+      <option value="boxColor.html">Box Color Changer</option>
+      <option value="boxMoving.html">Box Moving Animation</option>
+      <option value="FormTable.html">Form Table</option>
+      <option value="NumberInc.html">Number Increment</option>
+      <option value="quizApp.html">Quiz App</option>
+      <option value="SearchBar.html">Search Bar</option>
+      <option value="squring.html">Squaring Calculator</option>
+      <option value="stopwatch.html">Stopwatch</option>
+      <option value="TodoList.html">Todo List</option>
+      <option value="TodoList2.html">Todo List 2</option>
+    </select>
+    
+    <div id="projectViewer" style="margin-top: 20px;">
+      <p id="projectMsg">Please select a project from the dropdown above</p>
+      <iframe id="projectFrame" style="display:none; width: 100%; height: 600px; border: 2px solid #ddd; border-radius: 5px;"></iframe>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Get In Touch</h2>
+    <p style="font-size: 20px; margin-bottom: 40px;">Feel free to reach out for collaborations or just a friendly hello!</p>
+    
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>📞 Contact Information</h3>
+        
+        <div class="contact-item">
+          <i>📧</i>
+          <div>
+            <strong>Email:</strong><br>
+            <a href="mailto:niteshrajkumar66@gmail.com">niteshrajkumar66@gmail.com</a>
+          </div>
+        </div>
+        
+        <div class="contact-item">
+          <i>📱</i>
+          <div>
+            <strong>Phone:</strong><br>
+            <a href="tel:+918581951334">+91 8581951334</a>
+          </div>
+        </div>
+        
+        <div class="contact-item">
+          <i>🔗</i>
+          <div>
+            <strong>GitHub:</strong><br>
+            <a href="https://github.com/nitesh7079" target="_blank">github.com/nitesh7079</a>
+          </div>
+        </div>
+        
+        <div class="contact-item">
+          <i>💼</i>
+          <div>
+            <strong>LinkedIn:</strong><br>
+            <a href="https://www.linkedin.com/in/niteshraj91/" target="_blank">linkedin.com/in/niteshraj</a>
+          </div>
+        </div>
+        
+        <div class="contact-item">
+          <i>📍</i>
+          <div>
+            <strong>Location:</strong><br>
+            Lovely Professional University, Punjab
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form">
+        <h3>💬 Send a Message</h3>
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <input type="text" id="subject" placeholder="Subject" required>
+        <button onclick="sendMessage()">Send Message</button>
+        <p id="msg"></p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function showMessage() {
+      alert("Thank you for visiting my portfolio!");
+    }
+
+    function sendMessage() {
+      let name = document.getElementById("name").value;
+      let msg = document.getElementById("msg");
+
+      if (name === "") {
+        msg.innerText = "Please enter your name";
+      } else {
+        msg.innerText = "Thank you " + name + ", I will contact you soon!";
+      }
+    }
+
+    function toggleMenu() {
+      let menu = document.getElementById("menu");
+      if (menu.style.display === "flex") {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "flex";
+      }
+    }
+
+    function loadProject() {
+      let dropdown = document.getElementById("projectDropdown");
+      let frame = document.getElementById("projectFrame");
+      let msg = document.getElementById("projectMsg");
+      let selectedProject = dropdown.value;
+
+      if (selectedProject === "") {
+        frame.style.display = "none";
+        msg.style.display = "block";
+        msg.innerText = "Please select a project from the dropdown above";
+      } else {
+        msg.style.display = "none";
+        frame.style.display = "block";
+        frame.src = selectedProject;
+      }
+    }
+  </script>
+
+</body>
+</html>
