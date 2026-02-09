@@ -21,7 +21,7 @@
 
     /* NAVBAR */
     nav {
-      background: #2c3e50;
+      background: #5a67d8;
       color: white;
       display: flex;
       justify-content: space-between;
@@ -53,7 +53,7 @@
     }
 
     nav ul li a:hover {
-      color: #3498db;
+      color: #fbbf24;
     }
 
     .menu-icon {
@@ -73,13 +73,14 @@
     section h2 {
       font-size: 36px;
       margin-bottom: 30px;
-      color: #2c3e50;
+      color: #5a67d8;
       text-align: center;
+      font-weight: bold;
     }
 
     /* HOME */
     #home {
-      background: #3498db;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
       text-align: center;
       padding: 80px 30px;
@@ -113,7 +114,7 @@
     .profile-photo-placeholder {
       width: 100%;
       height: 100%;
-      background: #2c3e50;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -133,7 +134,7 @@
 
     .home-text .typing {
       font-size: 24px;
-      color: #f39c12;
+      color: #fbbf24;
       margin-bottom: 20px;
       font-weight: bold;
     }
@@ -161,12 +162,15 @@
     }
 
     .btn-primary {
-      background: #f39c12;
-      color: white;
+      background: #fbbf24;
+      color: #1e293b;
+      font-weight: bold;
     }
 
     .btn-primary:hover {
-      background: #e67e22;
+      background: #f59e0b;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
     .btn-secondary {
@@ -177,7 +181,7 @@
 
     .btn-secondary:hover {
       background: white;
-      color: #3498db;
+      color: #5a67d8;
     }
 
     /* ABOUT */
@@ -191,14 +195,15 @@
       font-size: 18px;
       text-align: center;
       padding: 30px;
-      background: #ecf0f1;
-      border-radius: 8px;
-      border-left: 4px solid #3498db;
+      background: #f1f5f9;
+      border-radius: 10px;
+      border-left: 5px solid #5a67d8;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
 
     /* SKILLS */
     #skills {
-      background: #ecf0f1;
+      background: #f8fafc;
     }
 
     .skills-container {
@@ -212,20 +217,22 @@
 
     .skill-box {
       background: white;
-      color: #2c3e50;
+      color: #334155;
       padding: 20px 30px;
-      border-radius: 5px;
+      border-radius: 8px;
       font-weight: bold;
       font-size: 16px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       transition: all 0.3s;
+      border: 2px solid transparent;
     }
 
     .skill-box:hover {
       transform: translateY(-5px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      background: #3498db;
+      box-shadow: 0 4px 15px rgba(90,103,216,0.3);
+      background: #5a67d8;
       color: white;
+      border-color: #5a67d8;
     }
 
     /* PROJECTS */
@@ -243,22 +250,25 @@
     #projectDropdown {
       padding: 12px 20px;
       font-size: 16px;
-      border: 2px solid #3498db;
-      border-radius: 5px;
+      border: 2px solid #5a67d8;
+      border-radius: 8px;
       background: white;
       cursor: pointer;
       min-width: 350px;
       display: block;
       margin: 0 auto 30px;
+      transition: all 0.3s;
     }
 
     #projectDropdown:hover {
-      border-color: #2c3e50;
+      border-color: #4c51bf;
+      box-shadow: 0 2px 8px rgba(90,103,216,0.15);
     }
 
     #projectDropdown:focus {
       outline: none;
-      border-color: #2c3e50;
+      border-color: #4c51bf;
+      box-shadow: 0 0 0 3px rgba(90,103,216,0.1);
     }
 
     #projectViewer {
@@ -275,14 +285,15 @@
     #projectFrame {
       width: 100%;
       height: 600px;
-      border: 2px solid #ddd;
-      border-radius: 5px;
+      border: 2px solid #e2e8f0;
+      border-radius: 10px;
       display: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     /* CONTACT */
     #contact {
-      background: #ecf0f1;
+      background: #f8fafc;
     }
 
     #contact p {
@@ -306,14 +317,20 @@
       min-width: 300px;
       background: white;
       padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: all 0.3s;
+    }
+
+    .contact-info:hover {
+      box-shadow: 0 4px 15px rgba(0,0,0,0.12);
     }
 
     .contact-info h3 {
       font-size: 24px;
       margin-bottom: 20px;
-      color: #2c3e50;
+      color: #5a67d8;
+      font-weight: bold;
     }
 
     .contact-item {
@@ -327,13 +344,14 @@
 
     .contact-item i {
       font-size: 20px;
-      color: #3498db;
+      color: #5a67d8;
       min-width: 25px;
     }
 
     .contact-item a {
-      color: #3498db;
+      color: #5a67d8;
       text-decoration: none;
+      transition: all 0.3s;
     }
 
     .contact-item a:hover {
@@ -345,55 +363,66 @@
       min-width: 300px;
       background: white;
       padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: all 0.3s;
+    }
+
+    .contact-form:hover {
+      box-shadow: 0 4px 15px rgba(0,0,0,0.12);
     }
 
     .contact-form h3 {
       font-size: 24px;
       margin-bottom: 20px;
-      color: #2c3e50;
+      color: #5a67d8;
+      font-weight: bold;
     }
 
     .contact-form input {
       width: 100%;
       padding: 12px;
       margin-bottom: 15px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
       font-size: 14px;
+      transition: all 0.3s;
     }
 
     .contact-form input:focus {
       outline: none;
-      border-color: #3498db;
+      border-color: #5a67d8;
+      box-shadow: 0 0 0 3px rgba(90,103,216,0.1);
     }
 
     .contact-form button {
       width: 100%;
       padding: 12px;
-      background: #3498db;
+      background: #5a67d8;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
       font-size: 16px;
       font-weight: bold;
       cursor: pointer;
       color: white;
+      transition: all 0.3s;
     }
 
     .contact-form button:hover {
-      background: #2c3e50;
+      background: #4c51bf;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(90,103,216,0.3);
     }
 
     #msg {
       margin-top: 15px;
       font-size: 14px;
-      color: #3498db;
+      color: #5a67d8;
       font-weight: 600;
     }
 
     footer {
-      background: #2c3e50;
+      background: #1e293b;
       color: white;
       text-align: center;
       padding: 20px;
