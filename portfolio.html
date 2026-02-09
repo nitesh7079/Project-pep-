@@ -13,96 +13,176 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f5f5f5;
-      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fff;
+      color: #1a1a1a;
       line-height: 1.6;
     }
 
     /* NAVBAR */
     nav {
-      background: #5a67d8;
-      color: white;
+      background: #fff;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 40px;
+      padding: 18px 50px;
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-bottom: 3px solid #ff5722;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
 
     .logo {
-      font-size: 24px;
+      font-size: 26px;
       font-weight: bold;
-      color: white;
+      color: #ff5722;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 25px;
+      gap: 30px;
       margin: 0;
     }
 
     nav ul li a {
-      color: white;
+      color: #333;
       text-decoration: none;
-      font-size: 16px;
+      font-size: 15px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.3s;
     }
 
     nav ul li a:hover {
-      color: #fbbf24;
+      color: #ff5722;
     }
 
     .menu-icon {
       display: none;
       font-size: 24px;
       cursor: pointer;
-      color: white;
+      color: #ff5722;
     }
 
     /* SECTIONS */
     section {
-      padding: 60px 30px;
+      padding: 80px 50px;
       max-width: 1200px;
       margin: 0 auto;
     }
 
     section h2 {
-      font-size: 36px;
-      margin-bottom: 30px;
-      color: #5a67d8;
-      text-align: center;
-      font-weight: bold;
+      font-size: 32px;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .section-line {
+      width: 60px;
+      height: 4px;
+      background: #ff5722;
+      margin-bottom: 40px;
     }
 
     /* HOME */
     #home {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      text-align: center;
-      padding: 80px 30px;
+      background: linear-gradient(135deg, #ff5722 0%, #ff8a65 100%);
+      padding: 100px 50px;
+      max-width: 100%;
     }
 
     .home-content {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 50px;
-      flex-wrap: wrap;
-      max-width: 1100px;
+      justify-content: space-between;
+      gap: 60px;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
+    .home-text {
+      flex: 1;
+      color: white;
+    }
+
+    .home-text span {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      opacity: 0.9;
+    }
+
+    .home-text h1 {
+      font-size: 52px;
+      margin: 15px 0;
+      font-weight: 700;
+    }
+
+    .home-text .role {
+      font-size: 22px;
+      margin-bottom: 20px;
+      opacity: 0.95;
+    }
+
+    .home-text p {
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 30px;
+      opacity: 0.9;
+      max-width: 500px;
+    }
+
+    .home-buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .btn {
+      padding: 14px 35px;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: none;
+    }
+
+    .btn-white {
+      background: #fff;
+      color: #ff5722;
+    }
+
+    .btn-white:hover {
+      background: #1a1a1a;
+      color: #fff;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 2px solid #fff;
+    }
+
+    .btn-outline:hover {
+      background: #fff;
+      color: #ff5722;
+    }
+
     .profile-photo {
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
+      width: 320px;
+      height: 320px;
+      border-radius: 5px;
       overflow: hidden;
-      border: 5px solid white;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      border: 5px solid rgba(255,255,255,0.3);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
     }
 
     .profile-photo img {
@@ -114,346 +194,328 @@
     .profile-photo-placeholder {
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: rgba(255,255,255,0.1);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 80px;
+      font-size: 100px;
       color: white;
       font-weight: bold;
-    }
-
-    .home-text {
-      max-width: 600px;
-    }
-
-    .home-text h1 {
-      font-size: 42px;
-      margin-bottom: 15px;
-    }
-
-    .home-text .typing {
-      font-size: 24px;
-      color: #fbbf24;
-      margin-bottom: 20px;
-      font-weight: bold;
-    }
-
-    .home-text p {
-      font-size: 18px;
-      line-height: 1.8;
-      margin-bottom: 25px;
-    }
-
-    .home-buttons {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .home-buttons button {
-      padding: 12px 30px;
-      font-size: 16px;
-      font-weight: bold;
-      border-radius: 5px;
-      cursor: pointer;
-      border: none;
-      transition: all 0.3s;
-    }
-
-    .btn-primary {
-      background: #fbbf24;
-      color: #1e293b;
-      font-weight: bold;
-    }
-
-    .btn-primary:hover {
-      background: #f59e0b;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      border: 2px solid white;
-      color: white;
-    }
-
-    .btn-secondary:hover {
-      background: white;
-      color: #5a67d8;
     }
 
     /* ABOUT */
     #about {
-      background: white;
+      background: #fafafa;
     }
 
-    #about p {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 18px;
+    .about-content {
+      display: flex;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-text p {
+      font-size: 17px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .about-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 30px;
+    }
+
+    .stat {
       text-align: center;
-      padding: 30px;
-      background: #f1f5f9;
-      border-radius: 10px;
-      border-left: 5px solid #5a67d8;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .stat h3 {
+      font-size: 36px;
+      color: #ff5722;
+      font-weight: 700;
+    }
+
+    .stat p {
+      font-size: 14px;
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     /* SKILLS */
     #skills {
-      background: #f8fafc;
+      background: #fff;
     }
 
-    .skills-container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      max-width: 700px;
-      margin: 0 auto;
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
     }
 
-    .skill-box {
-      background: white;
-      color: #334155;
-      padding: 20px 30px;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 16px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    .skill-item {
+      background: #fafafa;
+      padding: 30px 20px;
+      text-align: center;
+      border-radius: 5px;
+      border: 1px solid #eee;
       transition: all 0.3s;
-      border: 2px solid transparent;
     }
 
-    .skill-box:hover {
+    .skill-item:hover {
+      border-color: #ff5722;
       transform: translateY(-5px);
-      box-shadow: 0 4px 15px rgba(90,103,216,0.3);
-      background: #5a67d8;
-      color: white;
-      border-color: #5a67d8;
+      box-shadow: 0 10px 30px rgba(255,87,34,0.1);
+    }
+
+    .skill-item h4 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
     }
 
     /* PROJECTS */
     #projects {
-      background: white;
+      background: #fafafa;
     }
 
-    #projects p {
-      font-size: 18px;
+    #projects p.sub {
+      font-size: 16px;
+      color: #666;
       margin-bottom: 30px;
-      text-align: center;
-      color: #555;
     }
 
     #projectDropdown {
-      padding: 12px 20px;
-      font-size: 16px;
-      border: 2px solid #5a67d8;
-      border-radius: 8px;
-      background: white;
+      padding: 14px 20px;
+      font-size: 15px;
+      border: 2px solid #ff5722;
+      border-radius: 3px;
+      background: #fff;
       cursor: pointer;
       min-width: 350px;
-      display: block;
-      margin: 0 auto 30px;
-      transition: all 0.3s;
-    }
-
-    #projectDropdown:hover {
-      border-color: #4c51bf;
-      box-shadow: 0 2px 8px rgba(90,103,216,0.15);
+      color: #333;
+      font-weight: 500;
     }
 
     #projectDropdown:focus {
       outline: none;
-      border-color: #4c51bf;
-      box-shadow: 0 0 0 3px rgba(90,103,216,0.1);
     }
 
     #projectViewer {
-      margin-top: 30px;
+      margin-top: 40px;
     }
 
     #projectMsg {
-      font-size: 16px;
-      color: #777;
+      font-size: 15px;
+      color: #888;
+      padding: 40px;
       text-align: center;
-      padding: 20px;
+      background: #fff;
+      border: 2px dashed #ddd;
+      border-radius: 5px;
     }
 
     #projectFrame {
       width: 100%;
-      height: 600px;
-      border: 2px solid #e2e8f0;
-      border-radius: 10px;
+      height: 550px;
+      border: 2px solid #eee;
+      border-radius: 5px;
       display: none;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     /* CONTACT */
     #contact {
-      background: #f8fafc;
+      background: #fff;
     }
 
-    #contact p {
-      text-align: center;
-      font-size: 18px;
-      margin-bottom: 40px;
-      color: #555;
-    }
-
-    .contact-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .contact-info {
-      flex: 1;
-      min-width: 300px;
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      transition: all 0.3s;
-    }
-
-    .contact-info:hover {
-      box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
     }
 
     .contact-info h3 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      color: #5a67d8;
-      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 25px;
+      color: #1a1a1a;
+      font-weight: 600;
     }
 
     .contact-item {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 15px;
-      margin: 15px 0;
-      font-size: 16px;
-      color: #555;
+      margin-bottom: 20px;
     }
 
-    .contact-item i {
-      font-size: 20px;
-      color: #5a67d8;
-      min-width: 25px;
+    .contact-item .icon {
+      width: 45px;
+      height: 45px;
+      background: #fff5f2;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: #ff5722;
+      flex-shrink: 0;
     }
 
-    .contact-item a {
-      color: #5a67d8;
+    .contact-item .info strong {
+      display: block;
+      font-size: 14px;
+      color: #1a1a1a;
+      margin-bottom: 3px;
+    }
+
+    .contact-item .info a,
+    .contact-item .info span {
+      font-size: 14px;
+      color: #666;
       text-decoration: none;
-      transition: all 0.3s;
     }
 
-    .contact-item a:hover {
-      text-decoration: underline;
-    }
-
-    .contact-form {
-      flex: 1;
-      min-width: 300px;
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      transition: all 0.3s;
-    }
-
-    .contact-form:hover {
-      box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    .contact-item .info a:hover {
+      color: #ff5722;
     }
 
     .contact-form h3 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      color: #5a67d8;
-      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 25px;
+      color: #1a1a1a;
+      font-weight: 600;
     }
 
     .contact-form input {
       width: 100%;
-      padding: 12px;
+      padding: 14px 16px;
       margin-bottom: 15px;
-      border: 2px solid #e2e8f0;
-      border-radius: 8px;
+      border: 2px solid #eee;
+      border-radius: 3px;
       font-size: 14px;
-      transition: all 0.3s;
+      transition: border-color 0.3s;
     }
 
     .contact-form input:focus {
       outline: none;
-      border-color: #5a67d8;
-      box-shadow: 0 0 0 3px rgba(90,103,216,0.1);
+      border-color: #ff5722;
     }
 
     .contact-form button {
       width: 100%;
-      padding: 12px;
-      background: #5a67d8;
+      padding: 14px;
+      background: #ff5722;
       border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: bold;
+      border-radius: 3px;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
       cursor: pointer;
       color: white;
-      transition: all 0.3s;
+      transition: background 0.3s;
     }
 
     .contact-form button:hover {
-      background: #4c51bf;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(90,103,216,0.3);
+      background: #e64a19;
     }
 
     #msg {
       margin-top: 15px;
       font-size: 14px;
-      color: #5a67d8;
-      font-weight: 600;
+      font-weight: 500;
     }
 
+    /* FOOTER */
     footer {
-      background: #1e293b;
-      color: white;
+      background: #1a1a1a;
+      color: #fff;
       text-align: center;
-      padding: 20px;
-      font-size: 14px;
+      padding: 30px;
     }
 
     footer p {
-      margin: 5px 0;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    footer .social-links {
+      margin-top: 15px;
+    }
+
+    footer .social-links a {
+      color: #fff;
+      margin: 0 10px;
+      font-size: 14px;
+      opacity: 0.7;
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+
+    footer .social-links a:hover {
+      opacity: 1;
+      color: #ff5722;
     }
 
     /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .home-content {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+
+      .home-text p {
+        max-width: 100%;
+      }
+
+      .home-buttons {
+        justify-content: center;
+      }
+
+      .profile-photo {
+        width: 250px;
+        height: 250px;
+      }
+
+      .about-content {
+        flex-direction: column;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 768px) {
       nav {
-        padding: 15px 20px;
+        padding: 15px 25px;
       }
 
       nav ul {
         display: none;
         flex-direction: column;
-        background: #2c3e50;
         position: absolute;
-        top: 60px;
+        top: 65px;
+        left: 0;
         right: 0;
-        width: 100%;
-        text-align: center;
-        padding: 20px 0;
+        background: #fff;
+        padding: 20px;
+        border-bottom: 3px solid #ff5722;
         gap: 0;
       }
 
       nav ul li {
-        padding: 10px 0;
+        padding: 12px 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      nav ul li:last-child {
+        border-bottom: none;
       }
 
       .menu-icon {
@@ -461,20 +523,19 @@
       }
 
       section {
-        padding: 40px 20px;
-      }
-
-      section h2 {
-        font-size: 28px;
+        padding: 60px 25px;
       }
 
       #home {
-        padding: 60px 20px;
+        padding: 60px 25px;
       }
 
-      .home-content {
-        flex-direction: column;
-        text-align: center;
+      .home-text h1 {
+        font-size: 36px;
+      }
+
+      .home-text .role {
+        font-size: 18px;
       }
 
       .profile-photo {
@@ -482,61 +543,45 @@
         height: 200px;
       }
 
-      .profile-photo-placeholder {
-        font-size: 70px;
+      section h2 {
+        font-size: 26px;
       }
 
-      .home-text h1 {
-        font-size: 32px;
+      .about-stats {
+        flex-direction: column;
+        gap: 20px;
       }
 
-      .home-text .typing {
-        font-size: 20px;
-      }
-
-      .home-text p {
-        font-size: 16px;
-      }
-
-      .home-buttons {
-        justify-content: center;
-      }
-
-      .skills-container {
-        gap: 10px;
-      }
-
-      .skill-box {
-        padding: 15px 25px;
-        font-size: 14px;
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       #projectDropdown {
-        min-width: 100%;
-        font-size: 14px;
+        width: 100%;
+        min-width: auto;
       }
 
       #projectFrame {
         height: 400px;
       }
-
-      .contact-container {
-        gap: 20px;
-      }
-
-      .contact-info, .contact-form {
-        min-width: 100%;
-        padding: 25px;
-      }
     }
 
     @media (max-width: 480px) {
       .logo {
-        font-size: 20px;
+        font-size: 22px;
       }
 
-      section h2 {
-        font-size: 24px;
+      .home-text h1 {
+        font-size: 30px;
+      }
+
+      .btn {
+        padding: 12px 25px;
+        font-size: 13px;
+      }
+
+      .home-buttons {
+        flex-direction: column;
       }
 
       .profile-photo {
@@ -544,17 +589,13 @@
         height: 180px;
       }
 
-      .home-text h1 {
-        font-size: 28px;
+      .skills-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
       }
 
-      .home-text .typing {
-        font-size: 18px;
-      }
-
-      .home-buttons button {
-        padding: 10px 25px;
-        font-size: 14px;
+      .skill-item {
+        padding: 20px 15px;
       }
     }
   </style>
@@ -564,7 +605,7 @@
 
   <!-- NAVBAR -->
   <nav>
-    <h2 class="logo">Nitesh Raj</h2>
+    <div class="logo">NITESH RAJ</div>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
     <ul id="menu">
       <li><a href="#home">Home</a></li>
@@ -578,18 +619,18 @@
   <!-- HOME -->
   <section id="home">
     <div class="home-content">
+      <div class="home-text">
+        <span>Welcome to my portfolio</span>
+        <h1>Nitesh Raj</h1>
+        <p class="role">Full Stack Developer</p>
+        <p>I build modern web applications using the MERN stack. Passionate about clean code, great user experiences, and continuous learning.</p>
+        <div class="home-buttons">
+          <button class="btn btn-white" onclick="showMessage()">Hire Me</button>
+          <button class="btn btn-outline" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">View Work</button>
+        </div>
+      </div>
       <div class="profile-photo">
         <img src="profile.jpg" alt="Nitesh Raj" onerror="this.parentElement.innerHTML='<div class=\'profile-photo-placeholder\'>NR</div>'">
-      </div>
-      
-      <div class="home-text">
-        <h1>Hello, I'm Nitesh Raj</h1>
-        <div class="typing">Full Stack Developer 💻</div>
-        <p>Building web applications with MERN Stack. Passionate about creating innovative solutions and learning new technologies.</p>
-        <div class="home-buttons">
-          <button class="btn-primary" onclick="showMessage()">Hire Me</button>
-          <button class="btn-secondary" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">View Projects</button>
-        </div>
       </div>
     </div>
   </section>
@@ -597,31 +638,63 @@
   <!-- ABOUT -->
   <section id="about">
     <h2>About Me</h2>
-    <p>
-      <strong>Currently pursuing B.Tech in Computer Science and Engineering. Passionate about web development and eager to learn new technologies.</strong>
-    </p>
+    <div class="section-line"></div>
+    <div class="about-content">
+      <div class="about-text">
+        <p>I'm a B.Tech Computer Science student at Lovely Professional University, Punjab. Currently focused on mastering full-stack web development with the MERN stack.</p>
+        <p>I enjoy solving problems, learning new technologies, and building projects that make a difference. When I'm not coding, you'll find me exploring new tech trends or working on personal projects.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <h3>12+</h3>
+            <p>Projects Done</p>
+          </div>
+          <div class="stat">
+            <h3>6+</h3>
+            <p>Skills Learned</p>
+          </div>
+          <div class="stat">
+            <h3>100%</h3>
+            <p>Dedication</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- SKILLS -->
   <section id="skills">
     <h2>My Skills</h2>
-    <div class="skills-container">
-      <div class="skill-box">HTML</div>
-      <div class="skill-box">CSS</div>
-      <div class="skill-box">JavaScript</div>
-      <div class="skill-box">React</div>
-      <div class="skill-box">Node.js</div>
-      <div class="skill-box">MongoDB</div>
+    <div class="section-line"></div>
+    <div class="skills-grid">
+      <div class="skill-item">
+        <h4>HTML5</h4>
+      </div>
+      <div class="skill-item">
+        <h4>CSS3</h4>
+      </div>
+      <div class="skill-item">
+        <h4>JavaScript</h4>
+      </div>
+      <div class="skill-item">
+        <h4>React.js</h4>
+      </div>
+      <div class="skill-item">
+        <h4>Node.js</h4>
+      </div>
+      <div class="skill-item">
+        <h4>MongoDB</h4>
+      </div>
     </div>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects">
     <h2>My Projects</h2>
-    <p>Select a project to view it</p>
+    <div class="section-line"></div>
+    <p class="sub">Select a project to preview</p>
     
     <select id="projectDropdown" onchange="loadProject()">
-      <option value="">-- Select a Project --</option>
+      <option value="">Choose a project</option>
       <option value="banking system.html">Banking System</option>
       <option value="Bmi.html">BMI Calculator</option>
       <option value="boxColor.html">Box Color Changer</option>
@@ -637,7 +710,7 @@
     </select>
     
     <div id="projectViewer">
-      <p id="projectMsg">Please select a project from the dropdown above</p>
+      <p id="projectMsg">Select a project from the dropdown to preview it here</p>
       <iframe id="projectFrame"></iframe>
     </div>
   </section>
@@ -645,58 +718,58 @@
   <!-- CONTACT -->
   <section id="contact">
     <h2>Get In Touch</h2>
-    <p>Feel free to reach out for collaborations or just a friendly hello!</p>
+    <div class="section-line"></div>
     
-    <div class="contact-container">
+    <div class="contact-grid">
       <div class="contact-info">
-        <h3>Contact Information</h3>
+        <h3>Contact Details</h3>
         
         <div class="contact-item">
-          <i>📧</i>
-          <div>
-            <strong>Email:</strong><br>
+          <div class="icon">📧</div>
+          <div class="info">
+            <strong>Email</strong>
             <a href="mailto:niteshrajkumar66@gmail.com">niteshrajkumar66@gmail.com</a>
           </div>
         </div>
         
         <div class="contact-item">
-          <i>📱</i>
-          <div>
-            <strong>Phone:</strong><br>
+          <div class="icon">📱</div>
+          <div class="info">
+            <strong>Phone</strong>
             <a href="tel:+918581951334">+91 8581951334</a>
           </div>
         </div>
         
         <div class="contact-item">
-          <i>🔗</i>
-          <div>
-            <strong>GitHub:</strong><br>
+          <div class="icon">🔗</div>
+          <div class="info">
+            <strong>GitHub</strong>
             <a href="https://github.com/nitesh7079" target="_blank">github.com/nitesh7079</a>
           </div>
         </div>
         
         <div class="contact-item">
-          <i>💼</i>
-          <div>
-            <strong>LinkedIn:</strong><br>
+          <div class="icon">💼</div>
+          <div class="info">
+            <strong>LinkedIn</strong>
             <a href="https://www.linkedin.com/in/niteshraj91/" target="_blank">linkedin.com/in/niteshraj91</a>
           </div>
         </div>
         
         <div class="contact-item">
-          <i>📍</i>
-          <div>
-            <strong>Location:</strong><br>
-            Lovely Professional University, Punjab
+          <div class="icon">📍</div>
+          <div class="info">
+            <strong>Location</strong>
+            <span>LPU, Punjab, India</span>
           </div>
         </div>
       </div>
       
       <div class="contact-form">
-        <h3>Send a Message</h3>
-        <input type="text" id="name" placeholder="Your Name" required>
-        <input type="email" id="email" placeholder="Your Email" required>
-        <input type="text" id="subject" placeholder="Subject" required>
+        <h3>Send Message</h3>
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="email" id="email" placeholder="Your Email">
+        <input type="text" id="subject" placeholder="Subject">
         <button onclick="sendMessage()">Send Message</button>
         <p id="msg"></p>
       </div>
@@ -704,13 +777,17 @@
   </section>
 
   <footer>
-    <p>&copy; 2026 Nitesh Raj. All rights reserved.</p>
-    <p>Made with dedication and coffee</p>
+    <p>&copy; 2026 Nitesh Raj. All Rights Reserved.</p>
+    <div class="social-links">
+      <a href="https://github.com/nitesh7079" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/niteshraj91/" target="_blank">LinkedIn</a>
+      <a href="mailto:niteshrajkumar66@gmail.com">Email</a>
+    </div>
   </footer>
 
   <script>
     function showMessage() {
-      alert("Thank you for your interest! Let's connect!");
+      alert("Thanks for your interest! Let's connect.");
     }
 
     function sendMessage() {
@@ -720,11 +797,11 @@
       let msg = document.getElementById("msg");
 
       if (name === "" || email === "" || subject === "") {
-        msg.innerText = "Please fill in all fields";
-        msg.style.color = "#e74c3c";
+        msg.innerText = "Please fill all fields";
+        msg.style.color = "#e53935";
       } else {
-        msg.innerText = "Thank you " + name + "! I will get back to you soon!";
-        msg.style.color = "#27ae60";
+        msg.innerText = "Thanks " + name + "! I'll respond soon.";
+        msg.style.color = "#43a047";
         document.getElementById("name").value = "";
         document.getElementById("email").value = "";
         document.getElementById("subject").value = "";
@@ -733,32 +810,26 @@
 
     function toggleMenu() {
       let menu = document.getElementById("menu");
-      if (menu.style.display === "flex") {
-        menu.style.display = "none";
-      } else {
-        menu.style.display = "flex";
-      }
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
     }
 
     function loadProject() {
       let dropdown = document.getElementById("projectDropdown");
       let frame = document.getElementById("projectFrame");
       let msg = document.getElementById("projectMsg");
-      let selectedProject = dropdown.value;
 
-      if (selectedProject === "") {
+      if (dropdown.value === "") {
         frame.style.display = "none";
         msg.style.display = "block";
       } else {
         msg.style.display = "none";
         frame.style.display = "block";
-        frame.src = selectedProject;
+        frame.src = dropdown.value;
       }
     }
 
-    // Close menu when clicking on a link (mobile)
     document.querySelectorAll('nav ul li a').forEach(link => {
-      link.addEventListener('click', function() {
+      link.addEventListener('click', () => {
         if (window.innerWidth <= 768) {
           document.getElementById("menu").style.display = "none";
         }
